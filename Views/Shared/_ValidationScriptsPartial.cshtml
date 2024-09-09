@@ -1,2 +1,43 @@
 ﻿<script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
 <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+
+<script>
+    var telefoneMask = IMask(
+        document.getElementById('Telefone'), {
+        mask: [
+            {
+                mask: '(00) 0000-0000',
+
+            },
+            {
+                mask: '(00) 00000-0000'
+            }
+        ],
+        lazy: true,
+        placeholderChar: '_'
+    });
+
+    var cnpjMask = IMask(
+        document.getElementById('Cnpj'), {
+        mask: [
+            {
+                mask: '00.000.000/0000-00',
+
+            }
+        ],
+        lazy: true,
+        placeholderChar: '_'
+    });
+
+    var cepMask = IMask(
+        document.getElementById('CEP'), {
+        mask: [
+            {
+                mask: '00000-000',
+
+            }
+        ],
+        lazy: true,
+        placeholderChar: '_'
+    });
+</script>
