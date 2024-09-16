@@ -79,7 +79,7 @@ namespace IHCFormsFatecSO.Controllers
             {
                 return NotFound();
             }
-            return View(denuncia);
+            return View("Create", denuncia);
         }
 
         // POST: Denuncias/Edit/5
