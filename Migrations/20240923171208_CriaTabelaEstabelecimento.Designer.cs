@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace IHCFormsFatecSO.Migrations
 {
     [DbContext(typeof(IHCFormsFatecSOContext))]
-    [Migration("20240909174529_Inicial")]
-    partial class Inicial
+    [Migration("20240923171208_CriaTabelaEstabelecimento")]
+    partial class CriaTabelaEstabelecimento
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

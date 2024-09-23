@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace Validacao_Form.Models
+namespace IHCFormsFatecSO.Models
 {
     public class Denuncia
     {
@@ -11,7 +11,7 @@ namespace Validacao_Form.Models
         [Display(Name = "Telefone")]
         [StringLength(20)]
         public string? Telefone { get; set; }
-        [Display(Name = "e-mail")]
+        [Display(Name = "E-mail")]
         [StringLength(50)]
         public string? Email { get; set; }
         [Required(ErrorMessage = "Informe o CNPJ")]

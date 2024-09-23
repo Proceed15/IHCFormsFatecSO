@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using IHCFormsFatecSO.Data;
-using Validacao_Form.Models;
+using IHCFormsFatecSO.Models;
 
 namespace IHCFormsFatecSO.Controllers
 {
