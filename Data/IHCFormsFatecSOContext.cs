@@ -16,7 +16,7 @@ namespace IHCFormsFatecSO.Data
 
         public DbSet<IHCFormsFatecSO.Models.Denuncia> Denuncia { get; set; } = default!;
 
-        public DbSet<IHCFormsFatecSO.Models.Denuncia> Estabelecimento { get; set; }
+        public DbSet<IHCFormsFatecSO.Models.Estabelecimento> Estabelecimento { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -24,5 +24,6 @@ namespace IHCFormsFatecSO.Data
                 .HasKey(
                 p => new { p.CnpjBasico, p.CnpjOrdem, p.CnpjDv });
         }
+        public DbSet<IHCFormsFatecSO.Models.Estabelecimento> Estabelecimento_1 { get; set; } = default!;
     }
 }
