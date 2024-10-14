@@ -1,17 +1,27 @@
 ﻿@model IHCFormsFatecSO.Models.Denuncia
 
 @{
-    ViewData["Title"] = "Create";
+    var action = ViewContext.RouteData.Values["Action"].ToString().ToLower();
+
+    if (action == "create")
+    {
+        ViewData["Title"] = "Adicionar denúncia";
+        <h1>Adicionar</h1>
+    }
+    else
+    {
+        ViewData["Title"] = "Editar denúncia";
+        <h1>Editar</h1>
+    }
+
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
-<h1>Criar</h1>
-
 <h4>Denúncia</h4>
 <hr />
 <div class="row">
     <div class="col-md-12">
-        <form asp-action="Create">
+        @using (Html.BeginForm(null, "Denuncias", FormMethod.Post, new { @class = "needs-validation", novalidate = "true" }))
+        {
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="row">
                 <div class="col-md-6">
@@ -121,7 +131,7 @@
                     <input type="submit" value="Salvar" class="btn btn-primary" />
                 </div>
             </div>
-        </form>
+        }
     </div>
 </div>
 
