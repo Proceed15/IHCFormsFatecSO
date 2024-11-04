@@ -51,7 +51,7 @@ namespace IHCFormsFatecSO.Models
         [Display(Name = "Cidade")]
         [StringLength(100)]
         public string Cidade { get; set; } = string.Empty;
-        [Display(Name = "E-mail")]
+        [Display(Name = "E-Mail")]
         [StringLength(100)]
         public string? Email { get; set; } = string.Empty; // e-mail
     }

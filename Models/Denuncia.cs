@@ -11,7 +11,7 @@ namespace IHCFormsFatecSO.Models
         [Display(Name = "Telefone")]
         [StringLength(20)]
         public string? Telefone { get; set; }
-        [Display(Name = "E-mail")]
+        [Display(Name = "E-Mail")]
         [StringLength(50)]
         public string? Email { get; set; }
         [Required(ErrorMessage = "Informe o CNPJ")]

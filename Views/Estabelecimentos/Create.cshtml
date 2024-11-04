@@ -1,16 +1,30 @@
 ﻿@model IHCFormsFatecSO.Models.Estabelecimento
 
 @{
-    ViewData["Title"] = "Create";
-}
+    var action = ViewContext.RouteData.Values["Action"].ToString().ToLower();
 
-<h1>Create</h1>
+    if (action == "create")
+    {
+        ViewData["Title"] = "Adicionar Estabelecimento";
+        <h1>Adicionar</h1>
+    }
+    else
+    {
+        ViewData["Title"] = "Editar Estabelecimentto";
+        <h1>Editar</h1>
+    }
+
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
 
 <h4>Estabelecimento</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
-        <form asp-action="Create">
+        @*<form asp-action="Create">*@
+        @using (Html.BeginForm(null, "Estabelecimentos", FormMethod.Post,
+          new { @class = "needs-validation", novalidate = "true" }))
+        {
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div></div>
             <div class="form-group">
@@ -91,12 +105,12 @@
             <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-primary" />
             </div>
-        </form>
+            }
     </div>
 </div>
 
 <div>
-    <a asp-action="Index">Back to List</a>
+    <a asp-action="Index">Voltar</a>
 </div>
 
 @section Scripts {

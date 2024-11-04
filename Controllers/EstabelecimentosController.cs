@@ -65,19 +65,19 @@ namespace IHCFormsFatecSO.Controllers
         }
 
         // GET: Estabelecimentos/Edit/5
-        public async Task<IActionResult> Edit(string id)
+        public async Task<IActionResult> Edit(string id, string cnpjordem, string cnpjdv)
         {
             if (id == null)
             {
                 return NotFound();
             }
 
-            var estabelecimento = await _context.Estabelecimento_1.FindAsync(id);
+            var estabelecimento = await _context.Estabelecimento_1.FindAsync(id, cnpjordem, cnpjdv);
             if (estabelecimento == null)
             {
                 return NotFound();
             }
-            return View(estabelecimento);
+            return View("Create", estabelecimento);
         }
 
         // POST: Estabelecimentos/Edit/5
@@ -85,7 +85,7 @@ namespace IHCFormsFatecSO.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(string id, [Bind("CnpjBasico,CnpjOrdem,CnpjDv,NomeFantasia,DataSituacaoCadastral,CnaePrincipal,TpLogradouro,Logradouro,Numero,Complemento,Bairro,CEP,UF,Cidade,Email")] Estabelecimento estabelecimento)
+        public async Task<IActionResult> Edit(string id, string cnpjordem, string cnpjdv, [Bind("CnpjBasico,CnpjOrdem,CnpjDv,NomeFantasia,DataSituacaoCadastral,CnaePrincipal,TpLogradouro,Logradouro,Numero,Complemento,Bairro,CEP,UF,Cidade,Email")] Estabelecimento estabelecimento)
         {
             if (id != estabelecimento.CnpjBasico)
             {
