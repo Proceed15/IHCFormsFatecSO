@@ -112,7 +112,7 @@
                 <div class="col-md-12">
                     <div class="form-group">
                         <label asp-for="CEP" class="control-label"></label>
-                        <input asp-for="CEP" class="form-control" />
+                        <input asp-for="CEP" class="form-control" onblur="SearchZipCode()" />
                         <span asp-validation-for="CEP" class="text-danger"></span>
                     </div>
                 </div>
@@ -144,6 +144,12 @@
         await Html.RenderPartialAsync("_ImaskScriptsPartial");
     }
     @{
+        await Html.RenderPartialAsync("_ImaskDenunciaPartial");
+    }
+    @{
         await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+    @{
+        await Html.RenderPartialAsync("_CEPpartial");
     }
 }

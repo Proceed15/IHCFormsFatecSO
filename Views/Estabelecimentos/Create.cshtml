@@ -84,7 +84,7 @@
             </div>
             <div class="form-group">
                 <label asp-for="CEP" class="control-label"></label>
-                <input asp-for="CEP" class="form-control" />
+                <input asp-for="CEP" class="form-control" onblur="SearchZipCode()"/>
                 <span asp-validation-for="CEP" class="text-danger"></span>
             </div>
             <div class="form-group">
@@ -114,5 +114,16 @@
 </div>
 
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    @{
+        await Html.RenderPartialAsync("_ImaskScriptsPartial");
+    }
+    @{
+        await Html.RenderPartialAsync("_ImaskEstabelecimentoPartial");
+    }
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+    @{
+        await Html.RenderPartialAsync("_CEPpartial");
+    }
 }
